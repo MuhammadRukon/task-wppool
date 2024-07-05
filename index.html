@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2042B6",
+            },
+            fontFamily: {
+              primary: "'Mulish', sans-serif",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-[#ededed] overflow-x-hidden font-primary md:p-[25px]">
+    <!-- header -->
+    <header
+      class="bg-primary pb-12 lg:pb-0 overflow-y-hidden overflow-x-hidden"
+    >
+      <nav class="container flex justify-between mx-auto p-4 2xl:px-28 md:py-8">
+        <!-- logo -->
+        <img
+          src="./image/logo.png"
+          class="w-40 xl:w-[15%] object-contain"
+          alt=""
+        />
+        <!-- nav -->
+        <div class="flex relative items-center gap-3 p-2">
+          <div
+            class="bg-primary hover:scale-105 transition-all cursor-pointer hidden sm:block static z-[999] rounded-full"
+          >
+            <svg
+              class="scale-105"
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0.5"
+                y="0.5"
+                width="41"
+                height="41"
+                rx="20.5"
+                stroke="white"
+              />
+              <mask
+                id="mask0_1_1009"
+                style="mask-type: alpha"
+                maskUnits="userSpaceOnUse"
+                x="14"
+                y="14"
+                width="14"
+                height="14"
+              >
+                <rect x="14" y="14" width="14" height="14" fill="#D9D9D9" />
+              </mask>
+              <g mask="url(#mask0_1_1009)">
+                <path
+                  d="M24.5 26.8334C24.0139 26.8334 23.6007 26.6633 23.2604 26.323C22.9201 25.9827 22.75 25.5695 22.75 25.0834C22.75 25.0154 22.7549 24.9449 22.7646 24.872C22.7743 24.799 22.7889 24.7334 22.8083 24.6751L18.6958 22.2834C18.5306 22.4292 18.3458 22.5435 18.1417 22.6261C17.9375 22.7088 17.7236 22.7501 17.5 22.7501C17.0139 22.7501 16.6007 22.5799 16.2604 22.2397C15.9201 21.8994 15.75 21.4862 15.75 21.0001C15.75 20.514 15.9201 20.1008 16.2604 19.7605C16.6007 19.4202 17.0139 19.2501 17.5 19.2501C17.7236 19.2501 17.9375 19.2914 18.1417 19.374C18.3458 19.4567 18.5306 19.5709 18.6958 19.7167L22.8083 17.3251C22.7889 17.2667 22.7743 17.2011 22.7646 17.1282C22.7549 17.0553 22.75 16.9848 22.75 16.9167C22.75 16.4306 22.9201 16.0174 23.2604 15.6772C23.6007 15.3369 24.0139 15.1667 24.5 15.1667C24.9861 15.1667 25.3993 15.3369 25.7396 15.6772C26.0799 16.0174 26.25 16.4306 26.25 16.9167C26.25 17.4029 26.0799 17.8161 25.7396 18.1563C25.3993 18.4966 24.9861 18.6667 24.5 18.6667C24.2764 18.6667 24.0625 18.6254 23.8583 18.5428C23.6542 18.4602 23.4694 18.3459 23.3042 18.2001L19.1917 20.5917C19.2111 20.6501 19.2257 20.7157 19.2354 20.7886C19.2451 20.8615 19.25 20.932 19.25 21.0001C19.25 21.0681 19.2451 21.1386 19.2354 21.2115C19.2257 21.2845 19.2111 21.3501 19.1917 21.4084L23.3042 23.8001C23.4694 23.6542 23.6542 23.54 23.8583 23.4574C24.0625 23.3747 24.2764 23.3334 24.5 23.3334C24.9861 23.3334 25.3993 23.5036 25.7396 23.8438C26.0799 24.1841 26.25 24.5973 26.25 25.0834C26.25 25.5695 26.0799 25.9827 25.7396 26.323C25.3993 26.6633 24.9861 26.8334 24.5 26.8334Z"
+                  fill="white"
+                />
+              </g>
+            </svg>
+          </div>
+          <a
+            href=""
+            class="border hidden hover:scale-105 transition-all sm:block sticky z-[999] border-white bg-primary rounded-full px-5 py-2 text-white"
+            >Download the 2024 Report</a
+          >
+          <button id="hamburger" class="hover:scale-110 m-2 transition-all">
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 20 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0.5"
+                y="0.5"
+                width="19"
+                height="1"
+                fill="white"
+                stroke="white"
+              />
+              <rect
+                x="0.5"
+                y="7.5"
+                width="19"
+                height="1"
+                fill="white"
+                stroke="white"
+              />
+              <rect
+                x="0.5"
+                y="14.5"
+                width="19"
+                height="1"
+                fill="white"
+                stroke="white"
+              />
+            </svg>
+          </button>
+          <div
+            id="menu"
+            class="bg-white w-56 translate-x-[1000px] z-50 duration-300 transition-all p-4 absolute top-0 right-0 text-[12px] lg:text-[18px] sm:w-full pt-10 sm:pt-20 rounded-2xl text-left flex flex-col gap-4"
+          >
+            <button id="cross" class="absolute right-4 rounded-full top-[22px]">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.928909"
+                  y="14.364"
+                  width="19"
+                  height="1"
+                  transform="rotate(-45 0.928909 14.364)"
+                  fill="white"
+                  stroke="#191618"
+                />
+                <rect
+                  x="1.63684"
+                  y="0.928298"
+                  width="19"
+                  height="1"
+                  transform="rotate(45 1.63684 0.928298)"
+                  fill="white"
+                  stroke="#191618"
+                />
+              </svg>
+            </button>
+            <a href="">The WPPOOL Index</a>
+            <a href="">All Companies</a>
+            <a href="">Potential Future Listings</a>
+            <a href="">State of USA</a>
+            <a href="">Stories & Ideas</a>
+            <a href="">About WPPOOL</a>
+            <a href="">WPPOOL Portfolio Companies</a>
+            <a class="text-primary" href="">Visit WPPOOL</a>
+          </div>
+        </div>
+      </nav>
+      <!-- banner -->
+      <div class="relative px-3 container mx-auto xl:px-28">
+        <img
+          class="absolute pt-10 pl-10 lg:top-8 left-1/2 translate-x-[-50%] rotate-45 w-1/3 lg:w-1/5"
+          src="./image/banner.png"
+          alt=""
+        />
+        <img
+          class="absolute z-30 top-0 sm:-top-2 w-1/2 lg:w-1/3 xl:1/4 left-1/2 translate-x-[-50%]"
+          src="./image/Rectangle.png"
+          alt=""
+        />
+        <div
+          class="pt-[12%] pb-[40%] sm:pb-[22%] sticky text-white z-40 text-center"
+        >
+          <h1 class="text-3xl lg:text-4xl xl:text-7xl font-serif">The WPPOOL Index</h1>
+          <p class="text-sm lg:text-lg mt-4 max-w-[80%] mx-auto">
+            Monitor the performance of emerging, publicly traded, financial
+            technology companies
+          </p>
+          <div
+            class="absolute text-base sm:text-xl lg:text-3xl mb-2 lg:mb-12 text-left flex flex-col gap-3 lg:gap-10 left-0 bottom-0"
+          >
+            <div class="leading-4 sm:leading-6 xl:leading-8">
+              <p>60</p>
+              <p class="text-[10px] lg:text-sm font-light">Companies</p>
+            </div>
+            <div class="leading-4 sm:leading-6 xl:leading-8">
+              <p>$100B</p>
+              <p class="text-[10px] lg:text-sm font-light">Market cap</p>
+            </div>
+            <div class="leading-4 sm:leading-6 xl:leading-8">
+              <p>3.5x</p>
+              <p class="text-[10px] lg:text-sm font-light">Revenue multiple</p>
+            </div>
+            <div class="leading-4 sm:leading-6 xl:leading-8">
+              <p>60%</p>
+              <p class="text-[10px] lg:text-sm font-light">
+                LTM avg. revenue growth rate
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- downarrow -->
+      <div
+        id="downarrow"
+        class="shadow-xl absolute cursor-pointer rounded-full w-10 h-10 md:w-16 md:h-16 bg-white border-2 bottom-5 lg:bottom-60 right-5 lg:right-20 flex justify-center items-center border-primary text-primary"
+      >
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1_753"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="32"
+            height="32"
+          >
+            <rect width="32" height="32" fill="#D9D9D9" />
+          </mask>
+          <g mask="url(#mask0_1_753)">
+            <path
+              d="M15.9988 23.0769L8.92188 15.9999L9.86548 15.0563L15.3321 20.523V7.33325H16.6655V20.523L22.1321 15.0563L23.0757 15.9999L15.9988 23.0769Z"
+              fill="#2042B6"
+            />
+          </g>
+        </svg>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main>
+      <!-- chart -->
+      <div class="bg-white">
+        <div class="container gap-4 flex mx-auto p-4 lg:px-28">
+          <div
+            class="absolute md:static w-1/3 max-w-[220px] z-30 md:max-w-full md:w-1/5 bg-[#EFF3F6] rounded-lg p-4"
+          >
+            <div id="nav" class="relative font-semibold font-serif text-[#647888] flex flex-col gap-2">
+              <a
+                class="rounded-xl flex justify-between w-full hover:bg-primary py-3 transition-all hover:text-white px-3 shadow-md"
+                >Index <span>+</span></a
+              >
+              <a
+                class="rounded-xl flex justify-between w-full hover:bg-primary py-3 transition-all hover:text-white px-3 shadow-md"
+                >Index <span>+</span></a
+              >
+              <a
+                class="rounded-xl flex justify-between w-full hover:bg-primary py-3 transition-all hover:text-white px-3 shadow-md"
+                >Index <span>+</span></a
+              >
+              <a
+                class="rounded-xl flex justify-between w-full hover:bg-primary py-3 transition-all hover:text-white px-3 shadow-md"
+                >Index <span>+</span></a
+              >
+              <a
+                class="rounded-xl flex justify-between w-full hover:bg-primary py-3 transition-all hover:text-white px-3 shadow-md"
+                >Index <span>+</span></a
+              >
+            </div>
+          </div>
+          <div class="w-full md:w-4/5">
+            <!-- section header -->
+            <div class="flex pb-4 gap-2 font-serif">
+              <svg
+                width="46"
+                height="41"
+                viewBox="0 0 46 41"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.914491 40.5L26.5591 0.5H45.0855L19.4409 40.5H0.914491Z"
+                  stroke="#191618"
+                />
+              </svg>
+              <h2 class="text-xl lg:text-2xl xl:text-4xl">The WPPOOL Index</h2>
+            </div>
+            <div
+              class="ml-auto w-3/5 md:w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-bold text-2xl justify-between"
+            >
+              <div
+                class="bg-[#F3F3F3] flex justify-between w-full p-4 rounded-md"
+              >
+                <span class="text-[#FC714D] font-serif">66%</span>
+                <span
+                  class="border-r-4 border-[#FC714D] pr-3 text-right font-semibold text-lg"
+                  >WPPOOL <br />
+                  Index</span
+                >
+              </div>
+              <div
+                class="bg-[#F3F3F3] flex justify-between w-full p-4 rounded-md"
+              >
+                <span class="text-[#615DE3] font-serif">66%</span
+                ><span
+                  class="border-r-4 border-[#615DE3] pr-3 text-right font-semibold text-lg"
+                  >Google <br />
+                  Index</span
+                >
+              </div>
+              <div
+                class="bg-[#F3F3F3] flex justify-between w-full p-4 rounded-md"
+              >
+                <span class="text-[#7CA63A] font-serif">66%</span
+                ><span
+                  class="border-r-4 border-[#7CA63A] pr-3 text-right font-semibold text-lg"
+                  >Microsoft <br />
+                  Index</span
+                >
+              </div>
+              <div
+                class="bg-[#F3F3F3] flex justify-between w-full p-4 rounded-md"
+              >
+                <span class="text-[#6F34A1] font-serif">66%</span
+                ><span
+                  class="border-r-4 border-[#6F34A1] pr-3 text-right font-semibold text-lg"
+                  >Twitter <br />
+                  Index</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-between items-center">
+              <!-- select option -->
+              <div>
+                <select
+                  class="w-36 h-8 my-4 rounded-full bg-primary text-white px-4"
+                >
+                  <option value="">Sectors</option>
+                  <option value="">Sectors</option>
+                  <option value="">Sectors</option>
+                </select>
+                <select
+                  class="w-36 h-8 my-4 rounded-full bg-primary text-white px-4"
+                >
+                  <option value="">Types of IPO</option>
+                  <option value="">Types of IPO</option>
+                  <option value="">Types of IPO</option>
+                </select>
+              </div>
+              <div
+                id="time-period"
+                class="flex gap-1 rounded-full w-fit px-2 py-1 bg-[#EFF3F6] text-[#748DA1]"
+              >
+                <p
+                  class="cursor-pointer active text-white rounded-full px-4 py-2"
+                >
+                  1Y
+                </p>
+                <p class="cursor-pointer rounded-full px-4 py-2">YTD</p>
+                <p class="cursor-pointer rounded-full px-4 py-2">6M</p>
+                <p class="cursor-pointer rounded-full px-4 py-2">1M</p>
+                <p class="cursor-pointer rounded-full px-4 py-2">1W</p>
+              </div>
+            </div>
+            <canvas id="myChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- all companies -->
+      <div class="mt-10 mx-3 lg:mx-0 lg:px-0 rounded-lg bg-white pb-4">
+        <div class="container mx-auto px-3 xl:px-28">
+          <!-- section header -->
+          <div class="flex justify-between items-center pt-[41px]">
+            <h2 class="text-xl md:text-2xl lg:text-5xl">All Companies</h2>
+            <input
+              type="text"
+              name=""
+              class="outline-stone-300 border border-[#DADADA] py-3 px-4 w-48 md:w-72 bg-[#F3F3F3] rounded-lg text-lg placeholder:text-black"
+              placeholder="Search Companies"
+              id=""
+            />
+          </div>
+          <!-- table -->
+          <div class="tables mt-10 overflow-x-auto">
+            <!-- table header -->
+            <div class="min-w-[1056px]">
+              <div class="flex text-sm text-center font-semibold my-4 px-3">
+                <div class="w-[15%] text-left font-bold">Company</div>
+                <div class="w-[10%]">Ticker</div>
+                <div class="w-[15%]">Vertical</div>
+                <div class="w-[10%]">Price</div>
+                <div class="w-[10%]">Market Cap ($B)</div>
+                <div class="w-[10%]">Revenue Growth</div>
+                <div class="w-[10%]">Gross Margin</div>
+                <div class="w-[10%]">EV/Revenue</div>
+                <div class="w-[10%] text-nowrap text-right">
+                  YTD Performance
+                </div>
+              </div>
+              <!-- table body -->
+              <div
+                id="table-body"
+                class="text-sm text-center max-h-[200px] tables2 overflow-hidden overflow-y-auto font-semibold"
+              >
+                <!-- content comes from js file -->
+                <!-- content comes from js file -->
+                <!-- content comes from js file -->
+              </div>
+            </div>
+          </div>
+          <!-- section header -->
+          <div class="flex justify-center gap-5 pt-10">
+            <button
+              class="bg-primary hover:scale-105 transition-all text-white rounded-full py-3 px-3.5 shadow-[0_5px_10px_rgba(0,0,0,0.2)]"
+            >
+              Download All Companies Data
+            </button>
+            <button
+              class="bg-primary hover:scale-105 transition-all text-white rounded-full py-3 px-3.5 shadow-[0_5px_10px_rgba(0,0,0,0.2)]"
+            >
+              View Methodology
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full potential -->
+      <div class="mt-20">
+        <div class="container mx-auto px-3 xl:px-28">
+          <!-- header -->
+          <h2 class="text-lg md:text-2xl lg:text-5xl">
+            Potential Future Listings
+          </h2>
+          <p class="text-sm lg:text-base mt-5 max-w-[90%]">
+            Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.
+          </p>
+          <!-- partners -->
+          <div
+            id="partners"
+            class="mt-10 grid grid-cols-3 lg:grid-cols-5 gap-4"
+          >
+            <!-- content comes from js file -->
+            <!-- content comes from js file -->
+            <!-- content comes from js file -->
+          </div>
+        </div>
+      </div>
+      <!-- slider -->
+      <div class="container mx-auto px-3 lg:px-28 my-20 pb-16">
+        <!-- section header -->
+        <div>
+          <h2 class="text-xl md:text-3xl lg:text-5xl">State of USA</h2>
+          <select
+            class="w-36 h-16 my-4 rounded-full bg-primary text-white px-4"
+          >
+            <option value="">2024</option>
+            <option value="">2023</option>
+            <option value="">2022</option>
+            <option value="">2021</option>
+            <option value="">2020</option>
+          </select>
+          <p class="text-sm lg:text-base mb-4 max-w-[90%]">
+            Click through the slides or download the report to view natively on
+            your device.
+          </p>
+        </div>
+        <!-- swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper lg:-ml-10">
+            <div class="swiper-slide flex items-start justify-start">
+              <img class="w-40" src="./image/slider1.png" alt="" />
+            </div>
+            <div class="swiper-slide flex items-start justify-start">
+              <img class="w-40" src="./image/slider2.png" alt="" />
+            </div>
+            <div class="swiper-slide flex items-start justify-start">
+              <img class="w-40" src="./image/slider1.png" alt="" />
+            </div>
+            <div class="swiper-slide flex items-start justify-start">
+              <img class="w-40" src="./image/slider2.png" alt="" />
+            </div>
+            <div class="swiper-slide flex items-start justify-start">
+              <img class="w-40" src="./image/slider1.png" alt="" />
+            </div>
+            <div class="swiper-slide flex items-start justify-start">
+              <img class="w-40" src="./image/slider2.png" alt="" />
+            </div>
+          </div>
+          <div class="w-full flex justify-end lg:pr-20">
+            <div class="absolute left-40 lg:bottom-11">
+              <div
+                class="bg-white rounded-full w-16 h-16 text-primary swiper-button-next"
+              ></div>
+            </div>
+            <div class="absolute left-0 lg:bottom-11">
+              <div
+                class="bg-white rounded-full w-16 h-16 text-primary swiper-button-prev"
+              ></div>
+            </div>
+            <button
+              class="bg-primary hover:scale-105 transition-all w-48 lg:w-fit text-white rounded-full py-3 px-3.5 shadow-[0_5px_10px_rgba(0,0,0,0.2)]"
+            >
+              Download All Companies Data
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- stories and ideas -->
+      <div
+        id="stories-section"
+        class="container mx-auto px-3 lg:px-28 my-20 pb-16"
+      >
+        <!-- section header -->
+        <div>
+          <h2 class="text-xl md:text-3xl lg:text-5xl">Stories & Ideas</h2>
+          <p class="text-base lg:text-xl mt-3.5 lg:mt-[18px]">
+            The latest news and updates
+          </p>
+          <!-- card container -->
+          <div
+            id="stories"
+            class="grid mt-8 grid-col-1 gap-5 font-semibold md:grid-cols-2 lg:grid-cols-3"
+          >
+            <!-- card -->
+            <!-- content comes from js file -->
+            <!-- content comes from js file -->
+            <!-- content comes from js file -->
+            <!-- content comes from js file -->
+            <!-- content comes from js file -->
+          </div>
+        </div>
+      </div>
+
+      <!-- about -->
+      <div id="about-section" class="container mx-auto px-3 lg:px-28">
+        <div class="border-y border-[#90B8F0] py-20">
+          <div class="border-y bg-white flex flex-col md:flex-row">
+            <!-- right box -->
+            <div
+              class="md:w-[60%] p-4 lg:mx-8 flex flex-col justify-center gap-3"
+            >
+              <h2 class="text-xl md:text-3xl lg:text-5xl">About WPPOOL</h2>
+              <p class="text-[#7D7F81] text-[20px] lg:text-[30px]">
+                Investing in wppool for over 50 years
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                mollitia,molestiae quas vel sint commodi repudiandae
+                consequuntur voluptatum laborumnumquam blanditiis harum quisquam
+                eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum!
+                Provident similique accusantium nemo autem.
+              </p>
+              <button
+                class="bg-primary w-48 hover:scale-105 transition-all lg:w-fit text-white rounded-full py-3 px-3.5 shadow-[0_5px_10px_rgba(0,0,0,0.2)]"
+              >
+                Contact WPPOOL
+              </button>
+            </div>
+            <!-- left box -->
+            <div class="md:w-[40%]">
+              <img src="./image/aboutBanner.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- portfolio -->
+      <div id="portfolio-section" class="container mx-auto px-3 mt-20 lg:px-28">
+        <h2 class="text-xl md:text-3xl lg:text-5xl">
+          Selected WPPOOL Portfolio Companies
+        </h2>
+        <div
+          id="portfolio"
+          class="mt-6 lg:mt-10 grid grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <!-- content comes from js file -->
+          <!-- content comes from js file -->
+          <!-- content comes from js file -->
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-[#E6E6E6] mx-3 lg:mx-0 mt-20 py-20">
+      <div
+        class="flex flex-col lg:flex-row items-start container mx-auto lg:px-28"
+      >
+        <!-- col 1 -->
+        <div
+          class="w-full lg:w-1/2 gap-10 2xl:gap-56 flex flex-col justify-between"
+        >
+          <p class="font-semibold text-2xl lg:text-4xl lg:w-4/5">
+            Experience remarkable WordPress products with a new level of power,
+            beauty, and human-centered designs.
+          </p>
+          <div>
+            <div class="">
+              <p>©2024 Terms of Use Privacy Policy</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                mollitia, molestiae quas vel sint commodi repudiandae
+                consequuntur voluptatum laborum numquam blanditiis harum
+                quisquam eius sed odit fugiat iusto fuga praesentium optio,
+                eaque rerum! Provident similique accusantium nemo autem.
+                Veritatis obcaecati tenetur iure eius earum ut molestias
+                architecto voluptate aliquam nihil, eveniet aliquid culpa
+                officia aut! Impedit sit sunt quaera
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-10 lg:mt-0 flex justify-between">
+          <!-- col 2 -->
+          <div class="w-1/2 lg:w-1/3 flex justify-center">
+            <div class="flex text-primary text-left font-bold flex-col gap-4">
+              <p class="text-[#9FA0A1]">Jump to</p>
+              <a href="#about-section">About Us</a>
+              <a href="#portfolio-section">Portfolio</a>
+              <a href="">News</a>
+              <a href="#stories-section">Stories</a>
+              <a href="">Jobs</a>
+            </div>
+          </div>
+          <!-- col 3 -->
+          <div class="w-1/2 lg:w-2/3 font-semibold lg:px-20">
+            <div>
+              <p class="font-bold">Cambridge</p>
+              <p>
+                70728 Yost Burg, <br />
+                North Magdaleneview, <br />
+                UT 97952-2814
+              </p>
+            </div>
+            <div
+              class="relative my-5 before:absolute before:w-1/2 before:h-[1px] before:bg-[#9FA0A1] after:absolute after:w-1/2 after:h-[1px] after:bg-[#9FA0A1]"
+            >
+              <div class="py-5">
+                <p class="font-bold">London</p>
+                <p>
+                  Suite 292 903 Stehr Streets,
+                  <br />
+                  Langworthtown, SC 94577-9455
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative after:absolute after:w-1/2 after:h-[1px] after:bg-[#9FA0A1]"
+            >
+              <div class="pb-5">
+                <p class="font-bold">Cambridge</p>
+                <p>
+                  70728 Yost Burg, <br />
+                  North Magdaleneview, <br />
+                  UT 97952-2814
+                </p>
+              </div>
+            </div>
+            <div class="my-6 flex items-center gap-4">
+              <a
+                href="https://www.linkedin.com/in/muhammadrukon/"
+                target="_blank"
+                ><svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.5 2.48529V25.5147C27.5 26.0412 27.2908 26.5462 26.9185 26.9185C26.5462 27.2908 26.0412 27.5 25.5147 27.5H2.48529C1.95876 27.5 1.45379 27.2908 1.08148 26.9185C0.709164 26.5462 0.5 26.0412 0.5 25.5147L0.5 2.48529C0.5 1.95876 0.709164 1.45379 1.08148 1.08148C1.45379 0.709164 1.95876 0.5 2.48529 0.5L25.5147 0.5C26.0412 0.5 26.5462 0.709164 26.9185 1.08148C27.2908 1.45379 27.5 1.95876 27.5 2.48529ZM8.44118 10.8235H4.47059V23.5294H8.44118V10.8235ZM8.79853 6.45588C8.80062 6.15554 8.74354 5.85773 8.63053 5.57945C8.51752 5.30117 8.35081 5.04787 8.13991 4.83402C7.92901 4.62017 7.67806 4.44996 7.40137 4.3331C7.12469 4.21624 6.8277 4.15502 6.52735 4.15294H6.45588C5.8451 4.15294 5.25934 4.39557 4.82746 4.82746C4.39557 5.25934 4.15294 5.8451 4.15294 6.45588C4.15294 7.06666 4.39557 7.65242 4.82746 8.08431C5.25934 8.51619 5.8451 8.75882 6.45588 8.75882C6.75625 8.76621 7.05512 8.71435 7.33543 8.60619C7.61575 8.49803 7.872 8.3357 8.08955 8.12847C8.3071 7.92124 8.48169 7.67318 8.60334 7.39845C8.72499 7.12372 8.79132 6.82772 8.79853 6.52735V6.45588ZM23.5294 15.8106C23.5294 11.9909 21.0994 10.5059 18.6853 10.5059C17.8949 10.4663 17.1079 10.6347 16.4028 10.9942C15.6977 11.3537 15.0993 11.8917 14.6671 12.5547H14.5559V10.8235H10.8235V23.5294H14.7941V16.7715C14.7367 16.0793 14.9547 15.3925 15.4008 14.8602C15.8469 14.3279 16.485 13.9931 17.1765 13.9285H17.3274C18.59 13.9285 19.5271 14.7226 19.5271 16.7238V23.5294H23.4976L23.5294 15.8106Z"
+                    fill="#9FA0A2"
+                  />
+                </svg>
+              </a>
+              <a href=""
+                ><svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M29.9287 11.8801C29.947 12.1446 29.947 12.409 29.947 12.676C29.947 20.8088 23.7556 30.1884 12.4345 30.1884V30.1836C9.09019 30.1884 5.81536 29.2305 3 27.4243C3.48629 27.4828 3.97502 27.512 4.46496 27.5132C7.23644 27.5157 9.9287 26.5858 12.1091 24.8734C9.47532 24.8234 7.16575 23.1062 6.35893 20.5992C7.28154 20.7771 8.23218 20.7405 9.13772 20.4931C6.2663 19.913 4.20049 17.3901 4.20049 14.4602C4.20049 14.4334 4.20049 14.4078 4.20049 14.3822C5.05606 14.8588 6.01402 15.1232 6.99391 15.1525C4.28946 13.3451 3.45582 9.74725 5.08897 6.93433C8.21389 10.7795 12.8245 13.1171 17.7739 13.3646C17.2779 11.2268 17.9555 8.98674 19.5545 7.48399C22.0335 5.15371 25.9324 5.27315 28.2626 7.7509C29.6411 7.47912 30.9622 6.97333 32.1712 6.25669C31.7118 7.68143 30.7502 8.89167 29.4656 9.66072C30.6856 9.5169 31.8775 9.19027 33 8.69179C32.1737 9.93006 31.1328 11.0087 29.9287 11.8801Z"
+                    fill="#9FA0A2"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/780a71466c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- slider -->
+    <script src="./js/slider.js"></script>
+
+    <script src="./js/chart.js"></script>
+  </body>
+</html>

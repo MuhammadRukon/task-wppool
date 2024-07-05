@@ -1,0 +1,32 @@
+[
+    {
+        "company_img":"./image/stripe.png"
+    },
+    {
+        "company_img":"./image/klarna.png"
+    },
+    {
+        "company_img":"./image/plaid.png"
+    },
+    {
+        "company_img":"./image/checkout.png"
+    },
+    {
+        "company_img":"./image/revolut.png"
+    },
+    {
+        "company_img":"./image/chime.png"
+    },
+    {
+        "company_img":"./image/n26.png"
+    },
+    {
+        "company_img":"./image/brex.png"
+    },
+    {
+        "company_img":"./image/deel.png"
+    },
+    {
+        "company_img":"./image/gusto.png"
+    }
+]

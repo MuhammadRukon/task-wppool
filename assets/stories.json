@@ -1,0 +1,32 @@
+[
+  {
+    "img": "./image/team1.png",
+    "name": "Shahabuddin Sagor",
+    "content":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia."
+  },
+  {
+    "img": "./image/team2.png",
+    "name": "Nayem Khan",
+    "content":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia."
+  },
+  {
+    "img": "./image/team1.png",
+    "name": "Shahabuddin Sagor",
+    "content":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia."
+  },
+  {
+    "img": "./image/team2.png",
+    "name": "Muhammad",
+    "content":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia."
+  },
+  {
+    "img": "./image/team1.png",
+    "name": "Shahabuddin Sagor",
+    "content":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia."
+  },
+  {
+    "img": "./image/team2.png",
+    "name": "Rukon",
+    "content":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia."
+  }
+]
